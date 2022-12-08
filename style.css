@@ -171,6 +171,7 @@ button {
     main {
         display: grid;
         grid-template-columns: 1.5fr 3fr;
+        /* height: 200vh; */
     }
 
     .calendar i {
@@ -429,6 +430,26 @@ button {
 
     .desktop {
         display: block;
+        overflow-x: auto;
+
+    }
+
+    .class-display-grid {
+        width: 180%;
+        display: grid;
+        grid-template-columns: 0.5fr repeat(7, 1fr);
+        /* gap: 5px; */
+    }
+
+    .cel {
+        aspect-ratio: 1 / 1;
+        border: 0.3px solid var(--light-blue);
+    }
+
+    .date-cel {
+        aspect-ratio: 2 / 1;
+        background-color: var(--light-blue);
+        border: none;
     }
 
 

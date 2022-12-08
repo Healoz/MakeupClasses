@@ -12,7 +12,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     />
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
     <script src="script.js" defer></script>
+
     <title>Makeup Classes</title>
 </head>
 <body>
@@ -123,7 +126,7 @@
                 <div class="date past-month">
                     <div class="event-icons">
                         <div class="event-icon"></div>
-                        <div class="event-icon"></div>
+                        <div class="event-icon blue-bg"></div>
                     </div>
                     <div class="date-number">28</div>
                 </div>
@@ -157,7 +160,7 @@
                 <div class="date current-date">
                     <div class="event-icons">
                         <div class="event-icon"></div>
-                        <div class="event-icon"></div>
+                        <div class="event-icon blue-bg"></div>
                     </div>
                     <div class="date-number">5</div>
                 </div>
@@ -191,7 +194,7 @@
                 <div class="date">
                     <div class="event-icons">
                         <div class="event-icon"></div>
-                        <div class="event-icon"></div>
+                        <div class="event-icon blue-bg"></div>
                     </div>
                     <div class="date-number">12</div>
                 </div>
@@ -225,7 +228,7 @@
                 <div class="date">
                     <div class="event-icons">
                         <div class="event-icon"></div>
-                        <div class="event-icon"></div>
+                        <div class="event-icon blue-bg"></div>
                     </div>
                     <div class="date-number">19</div>
                 </div>
@@ -259,7 +262,7 @@
                 <div class="date">
                     <div class="event-icons">
                         <div class="event-icon"></div>
-                        <div class="event-icon"></div>
+                        <div class="event-icon blue-bg"></div>
                     </div>
                     <div class="date-number">26</div>
                 </div>
@@ -293,7 +296,7 @@
                 <div class="date past-month">
                     <div class="event-icons">
                         <div class="event-icon"></div>
-                        <div class="event-icon"></div>
+                        <div class="event-icon blue-bg"></div>
                     </div>
                     <div class="date-number">2</div>
                 </div>
@@ -383,6 +386,19 @@
                 <h2 class="day-name">Thursday, 8th December</h2>
 
                 <!-- Class entry -->
+                <div class="class-entry seaweed">
+                    <div class="name-level">
+                        <p class="level">Seaweed Level</p>
+                        <p class="student-name">Lauren Easter</p>
+                    </div>
+                    <div class="line"></div>
+                    <div class="time">
+                        <p>8:30 - 9:00am</p>
+                    </div>
+                </div>
+                <!-- End of class entry -->
+
+                <!-- Class entry -->
                 <div class="class-entry seaslug">
                     <div class="name-level">
                         <p class="level">Sea Slug Level</p>
@@ -400,24 +416,324 @@
 
         <!-- END OF MOBILE CLASS DISPLAY ------------------------------------->
 
-        <!-- TABLET / DESKTOP CLASS DISPLAY ------------------------------------>
-        <div class="class-display desktop">
-            <div class="class-display-grid">
+        <div class="date-label-grid-container" id="date-scroll">
+            <div class="date-label-grid">
                 <!-- date labels -->
                 <div class="time-cel"></div>
                 <div class="cel date-cel">
-                   <div class="date-number">5</div>
-                   <div class="date-day">Mon</div>
+                    <div class="date-text current-date">
+                        <div class="date-number">5</div>
+                        <div class="date-day">Mon</div>
+                    </div>
                 </div>
-                <div class="cel date-cel"></div>
-                <div class="cel date-cel"></div>
-                <div class="cel date-cel"></div>
-                <div class="cel date-cel"></div>
-                <div class="cel date-cel"></div>
-                <div class="cel date-cel"></div>
+                <div class="cel date-cel">
+                    <div class="date-text">
+                        <div class="date-number">6</div>
+                        <div class="date-day">Tue</div>
+                    </div>
+                </div>
+                <div class="cel date-cel">
+                    <div class="date-text">
+                        <div class="date-number">7</div>
+                        <div class="date-day">Wed</div>
+                    </div>
+                </div>
+                <div class="cel date-cel">
+                    <div class="date-text">
+                        <div class="date-number">8</div>
+                        <div class="date-day">Thu</div>
+                    </div>
+                </div>
+                <div class="cel date-cel">
+                    <div class="date-text">
+                        <div class="date-number">9</div>
+                        <div class="date-day">Fri</div>
+                    </div>
+                </div>
+                <div class="cel date-cel">
+                    <div class="date-text">
+                        <div class="date-number">10</div>
+                        <div class="date-day">Sat</div>
+                    </div>
+                </div>
+                <div class="cel date-cel">
+                    <div class="date-text">
+                        <div class="date-number">11</div>
+                        <div class="date-day">Sun</div>
+                    </div>
+                </div>
+    
+            </div>
+        </div>
+        
 
-                <!-- first row -->
+        <!-- TABLET / DESKTOP CLASS DISPLAY ------------------------------------>
+        <div class="class-display desktop" id="calendar-scroll">
+
+            <div class="class-display-grid">
+                
+                <!-- 8am row -->
+                <div class="time-cel">8am</div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+
+                <!-- 8:30am row -->
                 <div class="time-cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel">
+                    <div class="class seaweed">
+                        <div class="name-level">
+                            <p class="level">Seaweed Level</p>
+                            <p class="student-name">Lauren Easter</p>
+                        </div>
+                        <div class="time">
+                            <p>8:30 - 9:30am</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+
+                <!-- 9:00am row -->
+                <div class="time-cel">9am</div>
+                <div class="cel">
+                    <div class="class seaweed">
+                        <div class="name-level">
+                            <p class="level">Seaweed Level</p>
+                            <p class="student-name">Lauren Easter</p>
+                        </div>
+                        <div class="time">
+                            <p>9:00 - 9:30am</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+
+                <!-- 9:00am row -->
+                <div class="time-cel"></div>
+                <div class="cel">
+                    <div class="class shark">
+                        <div class="name-level">
+                            <p class="level">Shark Level</p>
+                            <p class="student-name">Sophie Easter</p>
+                        </div>
+                        <div class="time">
+                            <p>9:30 - 10:00am</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+
+                <!-- 9:00am row -->
+                <div class="time-cel">10am</div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+
+                <!-- 9:00am row -->
+                <div class="time-cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+
+                <!-- 9:00am row -->
+                <div class="time-cel">11am</div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+
+                <!-- 9:00am row -->
+                <div class="time-cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+
+                <!-- 9:00am row -->
+                <div class="time-cel">12pm</div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+
+                <!-- 9:00am row -->
+                <div class="time-cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+
+                <!-- 9:00am row -->
+                <div class="time-cel">1pm</div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+
+                <!-- 9:00am row -->
+                <div class="time-cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+
+                <!-- 9:00am row -->
+                <div class="time-cel">2pm</div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+
+                <!-- 9:00am row -->
+                <div class="time-cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+
+                <!-- 9:00am row -->
+                <div class="time-cel">3pm</div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+
+                <!-- 9:00am row -->
+                <div class="time-cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+
+                <!-- 9:00am row -->
+                <div class="time-cel">4pm</div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+
+                <!-- 9:00am row -->
+                <div class="time-cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel">
+                    <div class="class seaslug">
+                        <div class="name-level">
+                            <p class="level">Seaslug Level</p>
+                            <p class="student-name">Phoebe Easter</p>
+                        </div>
+                        <div class="time">
+                            <p>4:30 - 5:00pm</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+
+                <!-- 9:00am row -->
+                <div class="time-cel">5pm</div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+
+                <!-- 9:00am row -->
+                <div class="time-cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+
+                <!-- 9:00am row -->
+                <div class="time-cel">6pm</div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+
+                <!-- 9:00am row -->
+                <div class="time-cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+                <div class="cel"></div>
+
+                <!-- 9:00am row -->
+                <div class="time-cel">7pm</div>
                 <div class="cel"></div>
                 <div class="cel"></div>
                 <div class="cel"></div>

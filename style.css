@@ -24,8 +24,9 @@
 
     --trans-black: color: rgba(0, 0, 0, 0.7);
 
-    /* border-radius' */
     --border-radius1: 1rem;
+
+    --transition: 0.3s ease-in-out all;
 
 }
 
@@ -42,6 +43,10 @@ button {
 /* CALENDAR -----------------------------------------------------------*/
 
 /* Mobile */
+
+.date-label-grid-container {
+    display: none;
+}
 
 .calendar {
     background-color: var(--pale-blue);
@@ -143,6 +148,18 @@ button {
     border-radius: 100px;
 }
 
+.blue-bg {
+    background-color: var(--blue);
+}
+
+.green-bg {
+    background-color: var(--green);
+}
+
+.cyan-bg {
+    background-color: var(--cyan);
+}
+
 .date-number {
     font-weight: 600;
     font-size: 1.2rem;
@@ -167,6 +184,10 @@ button {
 /* Tablet */
 
 @media screen and (min-width: 750px) {
+
+    .date-label-grid-container {
+        display: block;
+    }
 
     main {
         display: grid;
@@ -219,6 +240,12 @@ button {
         border-radius: 7px;
         justify-content: center;
         align-items: center;
+        transition: var(--transition);
+    }
+
+    .calendar-arrow:hover {
+        cursor: pointer;
+        transform: scale(1.1);
     }
 
     .calendar-arrow i {
@@ -243,6 +270,12 @@ button {
 
     .date {
         padding: 0.2rem 0.5rem;
+        transition: var(--transition);
+    }
+
+    .date:hover {
+        transform: scale(1.3);
+        cursor: default;
     }
   
 }
@@ -281,6 +314,12 @@ button {
     border-radius: 7px;
     font-size: 0.8rem;
     font-weight: 500;
+    transition: var(--transition);
+}
+
+.class-display-buttons button:hover {
+    cursor: pointer;
+    transform: scale(1.1);
 }
 
 .class-display-buttons {
@@ -413,10 +452,13 @@ button {
 
 }
 
-
 /* Tablet */
 
 @media screen and (min-width: 750px) {
+
+    .page-content {
+        padding: 2rem;
+    }
 
     .class-display-buttons {
         display: flex;
@@ -431,32 +473,168 @@ button {
     .desktop {
         display: block;
         overflow-x: auto;
+        height: 70vh;
 
     }
 
     .class-display-grid {
-        width: 180%;
+        width: 200%;
         display: grid;
         grid-template-columns: 0.5fr repeat(7, 1fr);
         /* gap: 5px; */
     }
 
+    .date-label-grid {
+        display: grid;
+        grid-template-columns: 0.5fr repeat(7, 1fr);
+        width: 200%;
+    }
+
     .cel {
-        aspect-ratio: 1 / 1;
-        border: 0.3px solid var(--light-blue);
+        aspect-ratio: 1.2 / 1;
+        border: 0.3px solid var(--pale-blue);
     }
 
     .date-cel {
-        aspect-ratio: 2 / 1;
-        background-color: var(--light-blue);
+        aspect-ratio: 1.2 / 1;
         border: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    } 
+
+    .date-cel .date-number {
+        font-size: 1.4rem;
     }
 
+    .date-cel .date-day {
+        font-size: 0.8rem;
+    }
 
+    .date-text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0.5rem 1rem;
+        border-radius: 7px;
+    }
+
+    .time-cel {
+        font-size: 0.8rem;
+        font-weight: 600;
+    }
+
+    .class {
+        height: 100%;
+        width: 100%;
+        border-radius: 15px;
+        padding: 0.8rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        transition: var(--transition);
+    }
+
+    .class:hover {
+        transform: scale(1.05);
+    }
+
+    .class .name-level .level {
+        font-size: 0.6rem;
+    }
+
+    .class .name-level .student-name {
+        font-size: 0.8rem;
+    }
+
+    .class .time p {
+        font-size: 0.7rem;
+    }
+
+    .date-label-grid-container {
+        overflow-x: auto;
+    }
+
+    .class-display {
+        margin-top: unset;
+    }
+
+}
+
+/* Larger tablet */
+@media screen and (min-width: 900px) {
+    .class .name-level .level {
+        font-size: 0.7rem;
+    }
+
+    .class .name-level .student-name {
+        font-size: 0.8rem;
+    }
+
+    .class .time p {
+        font-size: 0.7rem;
+    }
+
+    .class-display-grid {
+        width: 155%;
+    }
+
+    .date-label-grid {
+        width: 155%;
+    }
+
+    .cel {
+        aspect-ratio: 1 / 1;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .class-display-grid {
+        width: 140%;
+    }
+
+    .date-label-grid {
+        width: 140%;
+    }
+
+    .cel {
+        aspect-ratio: 1 / 1.2;
+    }
+}
+
+@media screen and (min-width: 1100px) {
+    .class-display-grid {
+        width: 130%;
+    }
+
+    .date-label-grid {
+        width: 130%;
+    }
 }
 
 /* Desktop */
 @media screen and (min-width: 1200px) {
+
+    .class-display-grid {
+        width: 100%;
+    }
+
+    .date-label-grid {
+        width: 100%;
+    }
+}
+
+/* Desktop */
+@media screen and (min-width: 1350px) {
+    .cel {
+        aspect-ratio: 1 / 0.8;
+    }
+
+    .cel .class {
+        padding: 1rem;
+    }
 }
 
 

@@ -13,6 +13,9 @@
     --light-blue: #DBE5F9;
     --pale-blue: #F3F7FF;
 
+    --cyan: #30C1FF;
+    --light-cyan: #EBF9FF;
+
     --red: #E81616;
     --light-red: #FDE8E8;
 
@@ -163,7 +166,7 @@ button {
 
 /* Tablet */
 
-@media screen and (min-width: 778px) {
+@media screen and (min-width: 750px) {
 
     main {
         display: grid;
@@ -258,14 +261,22 @@ button {
 
 /* CLASS DISPLAY ----------------------------------------------------*/
 
-/* Mobile */
+/* Small mobile devices */
+
+.desktop {
+    display: none;
+}
 
 .page-content {
     padding: 1.5rem;
 }
 
+.day-block {
+    margin-top: 2rem;
+}
+
 .class-display-buttons button {
-    padding: 1.2rem;
+    padding: 1rem;
     border-radius: 7px;
     font-size: 0.8rem;
     font-weight: 500;
@@ -275,6 +286,10 @@ button {
     display: flex;
     gap: 1rem;
     justify-content: center;
+}
+
+.class-display-buttons i {
+    display: none;
 }
 
 .blue-btn {
@@ -291,15 +306,132 @@ button {
     margin-right: 4px;
 }
 
+.class-display {
+    margin-top: 1.5rem;
+}
+
+.day-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.class-entry {
+    padding: 2rem 0rem;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.line {
+    height: 4rem;
+    position: absolute;
+}
+
+.level {
+    font-size: 0.7rem;
+    font-weight: 600;
+}
+
+.student-name {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.time p {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.seaweed {
+    background-color: var(--light-green);
+}
+
+.shark {
+    background-color: var(--light-blue);
+}
+
+.seaslug {
+    background-color: var(--light-cyan);
+}
+
+.seaweed .name-level .level {
+    color: var(--green);
+}
+
+.shark .name-level .level {
+    color: var(--blue);
+}
+
+.seaslug .name-level .level {
+    color: var(--cyan);
+}
+
+.seaweed .line {
+    border: 0.3px solid var(--green);
+}
+
+.shark .line {
+    border: 0.3px solid var(--blue);
+}
+
+.seaslug .line {
+    border: 0.3px solid var(--cyan);
+}
+
+
+/* Regular Mobile */
+
+@media screen and (min-width: 380px) {
+
+    .time p {
+        font-size: 1.1rem;
+    }
+
+    .student-name {
+        font-size: 1.1rem;
+    }
+
+    .level {
+        font-size: 0.8rem;
+    }
+
+    .class-display-buttons i {
+        display: unset;
+    }
+
+    .class-display-buttons button {
+        padding: 1.2rem;
+        border-radius: 7px;
+        font-size: 0.8rem;
+        font-weight: 500;
+    }
+    
+
+}
+
+
 /* Tablet */
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 750px) {
 
     .class-display-buttons {
         display: flex;
         gap: 1rem;
         justify-content: flex-start;
     }
+
+    .mobile {
+        display: none;
+    }
+
+    .desktop {
+        display: block;
+    }
+
+
 }
 
 /* Desktop */

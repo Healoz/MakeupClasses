@@ -23,6 +23,7 @@
     --light-green: #E6F9F1;
 
     --trans-black: color: rgba(0, 0, 0, 0.7);
+    --grey: #5B5B5B;
 
     --border-radius1: 1rem;
 
@@ -473,7 +474,7 @@ button {
     .desktop {
         display: block;
         overflow-x: auto;
-        height: 70vh;
+        height: 60vh;
 
     }
 
@@ -636,6 +637,76 @@ button {
         padding: 1rem;
     }
 }
+
+
+/* Notify absences */
+
+/* Mobile */
+
+.absences-title h1 {
+    font-size: 1.7rem;
+}
+
+.absences-title p {
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    color: var(--grey);
+}
+
+.submit-btn {
+    background-color: var(--light-blue);
+    display: flex;
+    width: calc(100% - 2rem);
+    align-items: center;
+    justify-content: center;
+    color: var(--blue);
+    padding: 1rem;
+    margin-top: 2rem;
+    border-radius: 7px;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.submit-btn span {
+    margin-left: 1rem;
+    color: white;
+    background-color: var(--blue);
+    padding: 0.3rem 0.8rem;
+    border-radius: 100px;
+}
+
+.absent {
+    border: 0.3px solid var(--red);
+}
+
+/* Tablet */
+
+@media screen and (min-width: 768px) {
+    .submit-btn {
+        width: 30%;
+        min-width: 10rem;
+        transition: var(--transition);
+    }
+
+    .submit-btn:hover {
+        transform: scale(1.05);
+        cursor: pointer;
+    }
+
+    .submit-btn-container {
+        display: flex;
+        width: 100%;
+        justify-content: flex-end;
+    }
+}
+
+/* Desktop */
+@media screen and (min-width: 1200px) {
+    .absences-title h1 {
+        font-size: 2rem;
+    }
+}
+
 
 
 
